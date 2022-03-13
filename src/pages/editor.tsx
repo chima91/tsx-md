@@ -2,6 +2,7 @@ import * as React from "react"
 import { useState } from "react"
 import styled from "styled-components"
 import * as ReactMarkdown from "react-markdown"
+import { Link } from "react-router-dom"
 
 import { useStateWithStorage } from "../hooks/use_state_with_storage"
 import { putMemo } from "../indexeddb/memos"
@@ -70,6 +71,7 @@ export const Editor: React.FC = () => {
         Markdown Editor
         <HeaderControl>
           <Button onClick={() => setShowModal(true)}>保存する</Button>
+          <Link to="/history">履歴を見る</Link>
         </HeaderControl>
       </Header>
       <Wrapper>
