@@ -9,6 +9,7 @@ import { putMemo } from "../indexeddb/memos"
 import { Button } from "../components/button"
 import { SaveModal } from "../components/save_modal"
 import { Header } from "../components/header"
+import { StringLiteralLike } from "typescript"
 
 const Wrapper = styled.div`
   bottom: 0;
@@ -48,9 +49,13 @@ const Preview = styled.div`
   width: 50vw;
 `
 
-export const Editor: React.FC = () => {
-  const StorageKey = 'pages/editor:text'
-  const [text, setText] = useStateWithStorage('', StorageKey)
+interface Props {
+  text: string;
+  setText: (text: string) => void;
+}
+
+export const Editor: React.FC<Props> = (props) => {
+  const {text, setText} = props
   const [showModal, setShowModal] = useState(false)
 
   return (
