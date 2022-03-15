@@ -1,0 +1,15 @@
+{
+  "manifest_version": "2",
+  "version": "0.1.0",
+  "name": "tsx-md",
+  "icons": [
+    {
+      "src": "./image/icon_256×256.png",
+      "sizes": "256×256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000099"
+}
